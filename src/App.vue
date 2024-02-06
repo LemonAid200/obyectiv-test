@@ -1,15 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <CustomSelect :optionsList="citiesList"></CustomSelect>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import CustomSelect from './components/UI/customSelect.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CustomSelect
+  },
+  data: () => {
+    return {
+      citiesList: ['Краснодарский край', 'Красноярский край', 'Пермский край']
+    }
   }
 }
 </script>
