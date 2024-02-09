@@ -1,21 +1,32 @@
 <template>
-  <CustomSelect :optionsList="citiesList"></CustomSelect>
+  <CustomTable> </CustomTable>
+  <br>
+  <CustomSelect v-on:updateOption="(option) => chosenCity = option" :optionsList="citiesList" :placeholder="placeholder" :selectedOption="chosenCity"></CustomSelect>
 </template>
 
 <script>
 
 import CustomSelect from './components/UI/customSelect.vue';
+import CustomTable from './components/UI/customTable.vue';
 
 export default {
   name: 'App',
   components: {
-    CustomSelect
+    CustomSelect,
+    CustomTable
   },
   data: () => {
     return {
-      citiesList: ['Краснодарский край', 'Красноярский край', 'Пермский край']
+      citiesList: [
+        {id: 1, title: 'Краснодарский край'},
+        {id: 2, title: 'Красноярский край'},
+        {id: 3, title: 'Пермский край'}
+      ],
+      placeholder: 'Выберите название региона',
+      chosenCity: {}
     }
-  }
+  },
+
 }
 </script>
 
